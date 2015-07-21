@@ -1,1 +1,157 @@
-this is test code
+config_version 201401231558	;// version number of config file format
+
+parameter 2 	0		;//print ".lmf"-Headerinfo on screen (0 = no, 1 = yes)
+
+parameter 9		0		;//channel offset for rising signal edges
+parameter 10	1		;//use all CPUs (enable multicore support) (0 = no, 1 = yes)
+parameter 11	1		;// 0 = fast mode (do not fill standard histograms)
+						;// 1 = normal mode
+						;//  x = faster: fill histograms only every xth event
+
+parameter 15	1		;//Anti-Moire   (0 = no, 1 = yes)
+
+parameter 49	0		;//write new listmode (.lmf) file including sorted TDC data (0 = no, 1 = yes)
+
+parameter 50	0		;//demix channel (0 = no, 1 = yes)
+parameter 51	0		;//channel to demix (channels are counted starting from "0")
+parameter 52 	1000.	;//demix region (times after this time belong to other channel)
+parameter 53	0		;//number of channel to write the demixed data to
+
+parameter 54	0		;//number of channels in output LMF file (if 0 then number of channels in original LMF is used)
+parameter 55	0		;//number of hits per channel in output LMF file (if 0 then number of hits in original LMF is used)
+parameter 56	0		;//number of events to write to new root file (0 = infinit)
+parameter 57	0		;//start new file when number of events is (parameter[56]) (0 = no, 1 = yes)
+parameter 58	0		;//number of events to read from raw data file (0 = infinit)
+
+parameter 60	0		;// max. number of projectiles written to ntuple/.root-file by the presorter
+parameter 61	3		;// max. number of recoils written to ntuple/.root-file by the presorter
+parameter 62	3		;// max. number of electrons written to ntuple/.root-file by the presorter
+
+parameter 90	16		;
+
+parameter 100	0		;//DLD/HEX (0=none, 1=DLD, 2=HEX)     P R O J E C T I L E - detector
+parameter 101	0		;//common mode (0=start, 1=stop)
+parameter 102	0		;//channel number for projectile u1 (the first channel has index zero)
+parameter 103	1		;//channel number for projectile u2
+parameter 104	3		;//channel number for projectile v1 
+parameter 105	2		;//channel number for projectile v2
+parameter 106	4		;//channel number for projectile w1 
+parameter 107	5		;//channel number for projectile w2
+parameter 108	6		;//channel number for projectile MCP 
+parameter 109	1		;//use MCP-signal (0 = no, 1 = yes)
+parameter 110	0.5		;//conversion factor for u-layer [mm/ns]
+parameter 111	0.5		;//conversion factor for v-layer [mm/ns]
+parameter 112	0.5		;//conversion factor for w-layer [mm/ns]
+parameter 113	0.		;//offset for timesum u [ns]
+parameter 114	0.		;//offset for timesum v [ns]
+parameter 115	0.		;//offset for timesum w [ns]
+parameter 116	0.		;//position offset w-layer [ns]
+parameter 117	20.		;//width of timesum u [ns] (half width at bottom)
+parameter 118	20.		;//width of timesum v [ns] (half width at bottom)
+parameter 119	20.		;//width of timesum w [ns] (half width at bottom)
+parameter 120	25.		;//deadtime anode [ns]
+parameter 121	25.		;//deadtime MCP [ns]
+parameter 122	50.		;//MCP-radius [mm] (choose always bigger than real radius)
+parameter 123	200.	;//runtime [ns] (max. runtime on layer u)
+parameter 124	0.		;//runtime [ns] (max. runtime on layer v) if 0 then the u-value us used
+parameter 125	0.		;//runtime [ns] (max. runtime on layer w) if 0 then the u-value us used
+
+parameter 126	0.		;//shift detector to center MCP x-direction 
+parameter 127	0.		;//shift detector to center MCP y-direction
+parameter 128	0		;//auto calibration (0 = no, 1 = yes)
+parameter 129	0.		;//use resort routine (reconstruction) (0 = no, 1 = yes) 
+parameter 130	0		;//use sum correction (0 = no, 1 = yes)
+parameter 131	0		;//use pos correction (0 = no, 1 = yes)
+// the following 6 parameters should only be used if you know what you are doing:
+parameter 132   0		;//use sum peak tracker for layer u (0 = no, 1 = yes)
+parameter 133   0		;//use sum peak tracker for layer v (0 = no, 1 = yes)
+parameter 134   0		;//use sum peak tracker for layer w (0 = no, 1 = yes)
+parameter 135   0		;//layer u: sum offset for peak tracker at the beginning of the file
+parameter 136   0		;//layer v: sum offset for peak tracker at the beginning of the file
+parameter 137   0		;//layer w: sum offset for peak tracker at the beginning of the file
+
+
+parameter 200	1		;//DLD/HEX (0=none; 1=DLD; 2=HEX)     R E C O I L - detector
+parameter 201	0		;//common mode (0=start, 1=stop)
+parameter 202	3		;//channel number for recoil u1 (the first channel has index zero)
+parameter 203	10		;//channel number for recoil u2
+parameter 204	5		;//channel number for recoil v1 
+parameter 205	12		;//channel number for recoil v2
+parameter 206	6		;//channel number for recoil w1 
+parameter 207	13		;//channel number for recoil w2
+parameter 208	0		;//channel number for recoil MCP 
+parameter 209	1		;//use MCP-signal (0 = no, 1 = yes)
+parameter 210	0.4		;//conversion factor for u-layer [mm/ns]
+parameter 211	0.4		;//conversion factor for v-layer [mm/ns]
+parameter 212	0.4		;//conversion factor for w-layer [mm/ns]
+parameter 213	-145.	;//offset for timesum u [ns]
+parameter 214	-150.9	;//offset for timesum v [ns]
+parameter 215	0.0		;//offset for timesum w [ns]
+parameter 216	0.		;//position offset w-layer [ns]
+parameter 217	1.75	;//width of timesum u [ns] (half width at bottom)
+parameter 218	2.0		;//width of timesum v [ns] (half width at bottom)
+parameter 219	20.		;//width of timesum w [ns] (half width at bottom)
+parameter 220	20.		;//deadtime anode [ns]
+parameter 221	10.		;//deadtime MCP [n]
+parameter 222	65.		;//MCP-radius [mm] (choose always bigger than real radius)
+parameter 223	150.	;//runtime [ns] (max. runtime on layer u)
+parameter 224	0.		;//runtime [ns] (max. runtime on layer v) if 0 then the u-value us used
+parameter 225	0.		;//runtime [ns] (max. runtime on layer w) if 0 then the u-value us used
+
+parameter 226	0.0		;//shift detector to center MCP x-direction 
+parameter 227	.0		;//shift detector to center MCP y-direction
+parameter 228	0		;//auto calibration (0 = no, 1 = yes)
+parameter 229	1		;//use resort routine (reconstruction) (0 = no, 1 = yes) 
+parameter 230	1		;//use sum correction (0 = no, 1 = yes)
+parameter 231	1		;//use pos correction (0 = no, 1 = yes)
+// the following 6 parameters should only be used if you know what you are doing:
+parameter 232   0		;//use sum peak tracker for layer u (0 = no, 1 = yes)
+parameter 233   0		;//use sum peak tracker for layer v (0 = no, 1 = yes)
+parameter 234   0		;//use sum peak tracker for layer w (0 = no, 1 = yes)
+parameter 235   0		;//layer u: sum offset for peak tracker at the beginning of the file
+parameter 236   0		;//layer v: sum offset for peak tracker at the beginning of the file
+parameter 237   0		;//layer w: sum offset for peak tracker at the beginning of the file
+
+
+parameter 300	2		;//DLD/HEX (0=none; 1=DLD; 2=HEX)     E L E C T R O N - detector
+parameter 301	0		;//common mode (0=start, 1=stop)
+parameter 302	2		;//channel number for electron u1 (the first channel has index zero)
+parameter 303	9		;//channel number for electron u2
+parameter 304	4		;//channel number for electron v1 
+parameter 305	11		;//channel number for electron v2
+parameter 306	6		;//channel number for electron w1 
+parameter 307	13		;//channel number for electron w2
+parameter 308	1		;//channel number for electron MCP 
+parameter 309	1		;//use MCP-signal (0 = no, 1 = yes)
+parameter 310	0.55	;//conversion factor for u-layer [mm/ns]
+parameter 311	0.53	;//conversion factor for v-layer [mm/ns]
+parameter 312	0.5295	;//conversion factor for w-layer [mm/ns]
+parameter 313	-67.6	;//offset for timesum u [ns]
+parameter 314	-67		;//offset for timesum v [ns]
+parameter 315	-68.1	;//offset for timesum w [ns]
+parameter 316	0.65		;//position offset w-layer [ns]
+parameter 317	1.		;//width of timesum u [ns] (half width at bottom)
+parameter 318	1.		;//width of timesum v [ns] (half width at bottom)
+parameter 319	1.		;//width of timesum w [ns] (half width at bottom)
+parameter 320	20.		;//deadtime anode [ns]
+parameter 321	10.		;//deadtime MCP [ns]
+parameter 322	45.		;//MCP-radius [mm] (choose always bigger than real radius)
+parameter 323	80.		;//runtime [ns] (max. runtime on layer u)
+parameter 324	0.		;//runtime [ns] (max. runtime on layer v) if 0 then the u-value us used
+parameter 325	0.		;//runtime [ns] (max. runtime on layer w) if 0 then the u-value us used
+parameter 326	0.5		;//shift detector to center MCP x-direction 
+parameter 327	-1.		;//shift detector to center MCP y-direction
+
+parameter 328	0		;//auto calibration (0 = no, 1 = yes)
+parameter 329	1		;//use resort routine (reconstruction) (0 = no, 1 = yes) 
+parameter 330	1		;//use sum correction (0 = no, 1 = yes)
+parameter 331	1		;//use pos correction (0 = no, 1 = yes)
+// the following 6 parameters should only be used if you know what you are doing:
+parameter 332   0		;//use sum peak tracker for layer u (0 = no, 1 = yes)
+parameter 333   0		;//use sum peak tracker for layer v (0 = no, 1 = yes)
+parameter 334   0		;//use sum peak tracker for layer w (0 = no, 1 = yes)
+parameter 335   0		;//layer u: sum offset for peak tracker at the beginning of the file
+parameter 336   0		;//layer v: sum offset for peak tracker at the beginning of the file
+parameter 337   0		;//layer w: sum offset for peak tracker at the beginning of the file
+//added parameters
+parameter 338   50		;
